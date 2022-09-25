@@ -617,7 +617,7 @@ class LibraryManagementSystem:
         else:
             conn = mysql.connector.connect(host="localhost", username="root", password="suman@123", database="sumandb")
             my_cursor = conn.cursor()
-            my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            my_cursor.execute("insert into library1 values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                               (self.member_var.get(),
                                self.prnno_var.get(),
                                self.id_var.get(),
@@ -649,7 +649,7 @@ class LibraryManagementSystem:
             conn = mysql.connector.connect(host="localhost", username="root", password="suman@123", database="sumandb")
             my_cursor = conn.cursor()
             my_cursor.execute(
-                "update library set member=%s,id=%s,firstname=%s,lastname=%s,address1=%s,address2=%s,postid=%s,mobile=%s,bookid=%s,booktitle=%s,author=%s,dateborrowed=%s,datedue=%s,days=%s,latereturnfine=%s,dateoverdue=%s,finalprice=%s where prn_no=%s",
+                "update library1 set member=%s,id=%s,firstname=%s,lastname=%s,address1=%s,address2=%s,postid=%s,mobile=%s,bookid=%s,booktitle=%s,author=%s,dateborrowed=%s,datedue=%s,days=%s,latereturnfine=%s,dateoverdue=%s,finalprice=%s where prn_no=%s",
                 (
                     self.member_var.get(),
                     self.id_var.get(),
@@ -679,7 +679,7 @@ class LibraryManagementSystem:
     def fatch_data(self):
         conn = mysql.connector.connect(host="localhost", username="root", password="suman@123", database="sumandb")
         my_cursor = conn.cursor()
-        my_cursor.execute("select * from library")
+        my_cursor.execute("select * from library1")
         rows = my_cursor.fetchall()
 
         if len(rows) != 0:
